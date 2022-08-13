@@ -46,3 +46,12 @@ def calculator(operation, num1, num2)
     puts "Invalid operation!"
   end
 end
+
+# Here's an alternate solution for calculator with some fun Ruby metaprogramming
+def meta_calculator(operation, num1, num2)
+  if ["+", "-", "*", "/"].include?(operation)
+    num1.send(operation, num2)
+  else
+    puts "Invalid operation!"
+  end
+end
